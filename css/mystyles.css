@@ -1,0 +1,178 @@
+
+.social-icons .social-icon:hover {
+    background-color : #552121;
+}
+.text-primary {
+    color: #8d98ad !important;
+}
+a {
+    color: #a3b2cf;
+}
+    h6, .h6, .h5, .h5, .h4, .h4, .h3, .h3, .h2, .h2, .h1, .h1 {
+        font-family: "Note Sans TC", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+    h1, .h1{
+        font-weight: 600;
+        font-size: calc(1.25rem + 5.7vw);
+    }
+    h2, .h2{
+        font-weight: 400;
+    }
+    .subheading{
+        font-family: "Note Sans TC", sans-serif;
+        font-weight: 300;
+        text-transform: none;
+    }
+
+                            <style>
+                                .gallery-container {
+                                    display: flex; /* 使用彈性佈局 */
+                                    flex-wrap: wrap; /* 如果螢幕太窄會自動換行 */
+                                    gap: 20px; /* 照片之間的間距 */
+                                    justify-content: space-between; /* 均勻分布 */
+                                    padding: 20px;
+                                }
+
+                                .gallery-item {
+                                    flex: 0 1 calc(33.333% - 20px); /* 核心：扣除間距後剛好佔 1/3 */
+                                    margin: 0;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center; /* 讓圖片與文字置中 */
+                                }
+
+                                .gallery-item img {
+                                    width: 100%; /* 寬度撐滿 1/3 的空間 */
+                                    height: auto; /* 高度自動，保證橫豎比例自由 */
+                                    border-radius: 8px; /* 選配：讓照片圓角一點比較好看 */
+                                    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 選配：加一點陰影提升質感 */
+                                    object-fit: contain; /* 如果你之後有設定固定高度，這行能保證不被裁剪 */
+                                }
+
+                                .gallery-item figcaption {
+                                    margin-top: 10px;
+                                    font-size: 16px;
+                                    color: #333;
+                                    font-weight: 500;
+                                    text-align: center; /* 文字置中 */
+                                }
+
+                                /* 手機版適應：變成一行一張 */
+                                @media (max-width: 768px) {
+                                    .gallery-item {
+                                    flex: 0 1 100%;
+                                    }
+                                }
+                            </style>
+
+ img {
+  width: 100%;           /* 寬度隨容器縮放 */
+  aspect-ratio: 4 / 3;   /* 強制設定比例為 4:3 */
+  object-fit: cover;     /* 重要：確保圖片填滿且不變形 */
+}   
+
+/* --- 1. 更換全站字體 --- */
+/* 選取 body 和所有標題，以及 subheading，將字體設為思源黑體 */
+/* "Noto Sans TC" 必須對應我們在 HTML 中 <link> 引入的字體名稱 */
+body, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, .subheading {
+font-family: "Noto Sans TC", sans-serif;
+text-transform: none; /* 取消模板預設的英文字母大寫 */
+}
+/* 範例中，我們保留 h2 的大寫樣式，讓區塊標題更顯眼 */
+h2 {
+text-transform: uppercase;
+}
+/* --- 3. 更換區塊背景 --- */
+/* 選取所有 .resume-section (履歷區塊) */
+.resume-section {
+/* 設定一個淡黃色背景 (rgb(255, 248, 220)) */
+background-color: rgb(230, 230, 223);
+/* 加上一個牆面材質的背景圖 (圖片路徑是相對於 CSS 檔案的位置) */
+/* background-image: url('../assets/img/white-wall-3-2.png'); */
+}
+img {
+  width: 1000px;
+  height: 900px;
+  object-fit: cover; /* 自動裁切多餘部分，不變形 */
+  /* 或者使用 object-fit: contain; 保留全圖但留白 */
+}
+
+/* 針對左側欄位強制套用背景圖 */
+.sidebar, .bg-primary {
+    /* 使用 !important 確保覆蓋掉原本的藍色 */
+    background-image: url('../assets/img/8.jpg') !important;
+    
+    /* 確保背景圖正確顯示 */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    /* 讓照片稍微變暗，文字才看得清楚 */
+    background-color: rgba(47, 47, 47, 0.5) !important; 
+    background-blend-mode: multiply !important;
+}lor : rgba(0, 0, 0, 0.3); 
+.my-date-color {
+    color: #888888; /* 灰色 */
+    font-weight: bold; /* 加粗 */
+    font-size: 0.9rem; /* 稍微縮小一點 */
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;              /* 照片之間的間隔 */
+    padding: 20px 0;
+    justify-content: flex-start;
+    align-items: flex-start; /* 關鍵：確保不同高度的照片底部不會強制對齊導致拉伸 */
+}
+
+.gallery-item {
+    width: calc(33.33% - 10px); /* 保持三張一行 */
+    margin: 0 !important;
+    text-align: center;
+    list-style: none;
+}
+
+.gallery-item img {
+    width: 100%;            /* 寬度填滿容器 */
+    
+    /* --- 調整這裡 --- */
+    
+    /* 選擇 1：如果你大部分照片是直的（像手機拍的 3024x4032）*/
+    aspect-ratio: 3 / 4; 
+    
+    /* 選擇 2：如果你大部分照片是橫的 */
+    /* aspect-ratio: 4 / 3; */
+    
+    /* --- 調整結束 --- */
+
+    object-fit: cover;      /* 確保在指定比例內填滿，超出部分才會微幅裁切，不變形 */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 手機版保持一致 */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 8px); /* 手機改成兩張一行 */
+    }
+}
+
+/* --- 完整呈現原始比例，不裁切的寫法 --- */
+
+.gallery-item img {
+    width: 100%;            /* 寬度固定 */
+    
+    /* --- 移除 aspect-ratio --- */
+    
+    height: auto;           /* 高度依比例自動調整 */
+    
+    /* --- 修改 object-fit --- */
+    object-fit: contain;    /* 或是保持 cover，完全不裁切請配合 auto */
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
